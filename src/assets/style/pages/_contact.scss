@@ -1,4 +1,7 @@
 .contact {
+	@include tablet{
+		height: 100vh;
+	}
 	.image-bg {
 		padding: 122px 0 0 0;
 		height: 60vh;

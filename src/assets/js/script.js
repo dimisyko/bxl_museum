@@ -1,10 +1,10 @@
-import tlGsap from "./tlGsap.js";
-import form from "./form.js"
-import transition from "./transition.js"
+import tlGsap from "./components/tlGsap.js";
+import form from "./components/form.js"
+import transition from "./global/transition.js"
 import '../style/style.scss';
-import parallax from "./parallax.js";
-import { getOffset } from "./offsetEl.js"
-import cursor from "./cursor.js";
+import parallax from "./components/parallax.js";
+import { getOffset } from "./global/offsetEl.js"
+import cursor from "./global/cursor.js";
 
 class app {
     constructor() {
