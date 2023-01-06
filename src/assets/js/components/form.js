@@ -4,8 +4,8 @@ export default class form{
     constructor(){
         this.form = document.querySelector('form')
         this.childForm = {
-            lastname : document.getElementById('nom'),
-            firstname : document.getElementById('prenom'),
+            lastname : document.getElementById('lastName'),
+            firstname : document.getElementById('firstName'),
             email : document.getElementById('email'),
             confirMail : document.getElementById('emailconfirm'),
             error : document.querySelector('.erreur'),
@@ -16,11 +16,11 @@ export default class form{
     }
     formContant(e){
             e.preventDefault()
-            if (this.childForm.lastname.value == '' || this.childForm.firstname.value == '' || this.childForm.email.value == '' || this.childForm.confirMail.value == '') {
+            if (this.childForm.lastname.value.trim('') == '' || this.childForm.firstname.value.trim('') == '' || this.childForm.email.value.trim('') == '' || this.childForm.confirMail.value.trim('') == '') {
                 this.childForm.error.textContent = "Les champs sont vides"
-            }else if(this.childForm.email.value != this.childForm.confirMail.value){
+            }else if(this.childForm.email.value.trim('') != this.childForm.confirMail.value.trim('')){
                 this.childForm.error.textContent = "Les emails ne sont pas identiques"
-            }else if(!this.childForm.email.value.match(this.regex)){
+            }else if(!this.childForm.email.value.trim('').match(this.regex)){
                 this.childForm.error.textContent = "La syntaxe de l'email n'est pas correct"  
             }else{
                this.ajax()

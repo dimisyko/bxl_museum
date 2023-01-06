@@ -10,7 +10,7 @@ class app {
     constructor() {
         this.el = {
             link : document.querySelectorAll('.link'),
-            btnUp : document.querySelector('.flecheUp'),
+            btnUp : document.querySelector('.arrowUp'),
             afterExpo : document.querySelector('.intro'),
             istImg : document.querySelector('.list-img-anim')
         }
