@@ -1,0 +1,45 @@
+.menu {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 100;
+	padding: 22px 0;
+	.menu-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 90%;
+		margin: auto;
+		.brand {
+			width: 8rem;
+			display: block;
+			@include tablet{
+				width: 12%;
+			}
+		}
+		.menu-nav {
+			li {
+				list-style-type: none;
+				position: relative;
+				display: block;
+				margin: 15px 0;
+				@include phone{
+					display: inline-block;
+				}
+				a {
+					position: relative;
+					width: fit-content;
+					text-decoration: none;
+					margin-left: 50px;
+					@extend %hoverLien;
+					&::before {
+						@include After(-12px, -30px);
+						content: url(../../assets/icons/arrowExpoBlack.svg);
+						width: 30px;
+						z-index: 1;
+					}
+				}
+			}
+		}
+	}
+}

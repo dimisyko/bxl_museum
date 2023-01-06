@@ -1,0 +1,144 @@
+.intro {
+	position: relative;
+	&::after {
+		@include After(0, 0);
+		height: 40%;
+		width: 100%;
+		background-color: var(--color);
+        @include tablet{
+            height: 100%;
+            width: 35%;
+         }
+	}
+	.container-container {
+		@extend %centerFlex;
+		.event {
+			margin: 15% auto 0 auto;
+            @include tablet{
+                margin: 5% auto 0 auto;
+            }
+			.left {
+				.image {
+					width: 50%;
+					margin: auto;
+                    @include tablet{
+                        width: 32vw;
+                    }
+				}
+			}
+			.right {
+				width: 55vw;
+				margin: 7% auto 0 auto;
+                @include tablet{
+                    width: 50%;
+                    margin: 0;
+                }
+				h1 {
+					text-align: center;
+                    width: 90%;
+                    margin: 0 auto 50px auto;
+                    @include tablet{
+                        margin: 0 auto;
+                    }
+					.span-expo {
+						&:nth-child(1) {
+							padding-left: 10%;
+						}
+					}
+				}
+				p {
+					text-align: center;
+					i {
+						font-size: 30px;
+						margin-top: 10px;
+					}
+				}
+			}
+		}
+	}
+}
+.w-90{
+    width: 90%;
+    margin: auto;
+    @include tablet{
+        width: 100%;
+    }
+    .container-txt {
+        margin: 12% auto;
+        @include tablet{
+            width: 90%;
+        }
+        .info {
+            margin-bottom: 10px;
+        }
+        .txt-detail {
+            border-top: 1px solid rgba(0, 0, 0, 0.37);
+            padding: 8% 0;
+            h2{
+                margin-bottom: 30px;
+                @include tablet{
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    .container-grid {
+        display: block;
+        @include tablet{
+            display: grid;
+            grid-template-columns: repeat(15, 1fr);
+            grid-template-rows: repeat(10, 1fr);
+        }
+        .list {
+            position: relative;
+            margin-bottom: 10%;
+            @include tablet{
+                margin-bottom: 0;
+            }
+            &:nth-child(1) {
+                grid-column: 1/5;
+                grid-row: 1/4;
+            }
+            &:nth-child(2) {
+                grid-column: 9/15;
+                grid-row: 3/6;
+            }
+            &:nth-child(3) {
+                margin-top: auto;
+                grid-column: 2/7;
+                grid-row: 5;
+                font-size: 1.08vw;
+            }
+            &:nth-child(4) {
+                grid-column: 7/15;
+                grid-row: 7/10;
+            }
+            &:nth-child(5) {
+                grid-column: 9/15;
+                grid-row: 10;
+                margin-top: auto;
+                font-size: 1.08vw;
+            }
+            &:nth-child(6) {
+                grid-column: 2/8;
+                grid-row: 9/11;
+            }
+            img {
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    .autre-Event {
+        margin: 12% 0;
+            .next {
+                @extend %btn;
+                font-size: 1rem;
+                @include tablet{
+                    font-size: 1.5rem;
+                }
+        }
+    }
+    
+
+}

@@ -1,0 +1,47 @@
+.contact {
+	.image-bg {
+		padding: 122px 0 0 0;
+		height: 60vh;
+		@include tablet {
+			height: auto;
+			padding: 9% 0 0 0;
+		}
+		img {
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	.container-contact {
+		padding: 0;
+		@include tablet {
+			padding: 9% 0 0 0;
+		}
+		.container-flex {
+			height: 100%;
+			border-top: 0.5px solid rgba(0, 0, 0, 0.2);
+			.txt_contact {
+				@extend %centerFlex;
+				height: auto;
+				padding: 50px 0;
+				border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+				border-right: 0.5px solid rgba(0, 0, 0, 0.2);
+				&:last-child {
+					border-bottom: none;
+				}
+				a {
+					text-transform: uppercase;
+					font-family: 'Circular Std';
+					color: #93a6e3;
+					text-decoration: underline;
+                    font-size: 1.2rem;
+                    @include phone{
+                        font-size: 2rem; 
+                    }
+                    @include tablet{
+                        font-size: 3vw; 
+                    }
+				}
+			}
+		}
+	}
+}

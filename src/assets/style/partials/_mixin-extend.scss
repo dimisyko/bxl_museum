@@ -1,0 +1,82 @@
+@mixin centerObs($top, $left, $x, $y) {
+	position: absolute;
+	top: $top;
+	left: $left;
+	transform: translate($x, $y);
+}
+%centerFlex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+%flexTitle {
+	display: flex;
+	flex-direction: column;
+}
+@mixin After($top, $left) {
+	content: '';
+	position: absolute;
+	top: $top;
+	left: $left;
+	z-index: -1;
+}
+%btn {
+	border: 1px solid #525252;
+	border-radius: 20px;
+	padding: 3px 10px;
+	width: fit-content;
+	margin: auto;
+	&:hover {
+		color: white;
+		background-color: #525252;
+	}
+}
+%hoverLien {
+	&::after {
+		@include After(0, 0);
+		top: 100%;
+		height: 2px;
+		width: 100%;
+		transform: scaleX(0);
+		transform-origin: right;
+		background-color: rgb(233, 0, 0);
+		transition: transform 0.5s;
+		z-index: 10;
+	}
+	&:hover,
+	&.active {
+		color: rgb(233, 0, 0);
+		&::after {
+			transform: scaleX(1);
+			transform-origin: left;
+		}
+	}
+	&.active {
+		color: rgb(233, 0, 0);
+	}
+}
+
+@mixin phone {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 992px){
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin hoverDevice {
+  @media (hover : none) {
+    @content;
+  }
+}

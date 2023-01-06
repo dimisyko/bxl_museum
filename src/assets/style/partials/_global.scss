@@ -1,0 +1,90 @@
+@import './mixin-extend';
+/*Global*/ /*Global*/ /*Global*/
+*,
+.container-fluid,
+.row,
+.col-lg-6,
+.col-6,
+a,
+ul,
+li,
+.d-flex {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style-type: none;
+}
+body {
+	background-color: #f1f1f1;
+}
+::-webkit-scrollbar {
+	width: 8px;
+}
+::-webkit-scrollbar-thumb {
+	background: rgb(255, 49, 49);
+}
+::selection {
+	background-color:rgb(233, 0, 0);
+	color: #FFD300;
+}
+.list img {
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+button{
+	background-color: transparent;
+	border: none;
+}
+.bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100%;
+	pointer-events: none;
+	.bg-transition {
+		width: 100%;
+		height: 100%;
+	}
+}
+.opacity {
+	opacity: 0;
+}
+img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+a {
+	color: black;
+	font-family: 'Poppins';
+}
+h1,
+h2,
+h3,
+h4 {
+	font-family: 'Circular Std';
+	text-transform: uppercase;
+	color: #525252;
+}
+span, a {
+	display: block;
+}
+figure{
+	margin: 0;
+}
+.menu,
+.event,
+.footer {
+	width: 90%;
+	margin: 0 auto;
+}
+.parallax,
+.ticket,
+.intro {
+	height: 100vh;
+}
+#all,
+.site-main {
+	overflow-x: hidden;
+}

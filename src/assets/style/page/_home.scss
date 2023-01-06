@@ -1,0 +1,397 @@
+.home {
+	margin-bottom: 25%;
+	.container-home {
+		position: relative;
+		height: 100vh;
+		.element-absolute {
+			position: absolute;
+			z-index: -1;
+			width: 30%;
+			&:nth-child(1) {
+				top: 8%;
+				left: 63%;
+				transform: rotate(-8deg);
+			}
+			&:nth-child(2) {
+				left: 5%;
+				bottom: 5%;
+				transform: rotate(8deg);
+			}
+			@include phone{
+				&:nth-child(2){
+					left: 5%;
+				}
+			}
+			@include tablet{
+				width: 22%;
+				&:nth-child(2) {
+					left: 15%;
+				}
+			}
+		}
+		.container-center {
+			@include centerObs(50%, 50%, -50%, -50%);
+			width: 100%;
+			height: 40vw;
+		}
+		.txt {
+			width: 45%;
+			color: #525252;
+			margin: auto;
+			height: 100%;
+			span {
+				&:nth-child(3) {
+					z-index: -1;
+					padding-left: 8%;
+				}
+			}
+		}
+		.scroll-down {
+			position: absolute;
+			bottom: 5%;
+			left: 50%;
+			text-align: center;
+			font-size: 20px;
+			transform: translateX(-50%);
+		}
+	}
+}
+/*ScaleImg*/ /*ScaleImg*/ /*ScaleImg*/
+.img-scale {
+	height: 100vh;
+	padding: 0;
+	.image-scale {
+		width: 40%;
+		height: 50vh;
+		margin: auto;
+	}
+}
+/*InfoMuseum*/ /*InfoMuseum*/ /*InfoMuseum*/
+.info-museum {
+	position: relative;
+	&::after {
+		@include After(0, 0);
+		height: 100%;
+		width: 40%;
+		background-color: #FFD300;
+	}
+	.txt {
+		padding: 20% 0;
+		width: 90%;
+		margin: auto;
+		@include tablet{
+			padding: 12% 0;
+			width: 80%;
+		}
+		h2 {
+			width: 70%;
+			margin: 0 auto;
+			@extend %flexTitle;
+			@include phone{
+				width: 60%;
+			}
+			@include tablet{
+				width: 50%;
+				margin: 0;
+			}
+		}
+		p {
+			width: 100%;
+			margin: 7% auto 0;	
+			@include tablet{
+				width: 60%;
+			}
+		}
+	}
+}
+/*ListImg*/ /*ListImg*/ /*ListImg*/
+.list-img {
+	position: relative;
+	padding: 20% 0;
+	@include tablet{
+		padding: 12% 0;
+	}
+	&::after {
+		@include After(0, 40%);
+		background-color: rgb(250, 250, 250);
+		height: 60%;
+		width: 60%;
+		left: 40%;
+	}
+	.list-img-anim {
+		margin: 5% 0 5% -10%;
+		.image {
+			width: 45%;
+			margin: 0 20px;
+			flex-shrink: 0;
+			@include tablet{
+				width: 25%;
+			}
+		}
+	}
+}
+.bg-fixed {
+	height: 100vh;
+	.bg-transi {
+		height: 0;
+	}
+}
+/*Exposition*/ /*Exposition*/ /*Exposition*/
+.section-exposition {
+	position: relative;
+	padding: 12% 0 5% 0;
+	&::after {
+		@include After(0, 0);
+		height: 70%;
+		width: 100%;
+		background-color: #93A6E3;
+		@include tablet{
+			height: 80%;
+		}
+	}
+	.txt-expo {
+		position: initial;
+    padding: 0;
+    width: 90%;
+    margin: 0 auto 5% auto;
+	@include tablet{
+		position: absolute;
+		top: 7vw;
+		left: 5vw;
+	}
+		h3 {
+			color: white;
+			margin-bottom: 5%;
+		}
+		p {
+			width: 100%;
+			color: white;
+			@include tablet{
+				width: 25%;
+			}
+		}
+	}
+	.image {
+		background-image: url(../../assets/img/parallax_img.webp);
+		background-size: cover;
+		width: 90%;
+		margin: auto;
+		height: 40vh;
+		background-position: 70%;
+		background-attachment: fixed;
+		@include tablet{
+			height: 75vh;
+			width: 65%;
+			margin: 0 0 0 auto;
+		}
+	}
+}
+/*currentExposition*/ /*currentExposition*/ /*currentExposition*/
+.bg-gray,
+.bg-transi {
+	background-color: #525252;
+	transition: background-color 0.5s;
+}
+.container-expo {
+	position: relative;
+	flex-shrink: 0;
+	width: 100vw;
+	height: 100vh;
+	&:nth-child(1) {
+		&::after {
+			@include After(60%, 0);
+			height: 40vh;
+			width: 30%;
+			background-color: #FFD300;
+		}
+	}
+	&:nth-child(even) .container-img {
+		bottom: 7%;
+	}
+	&:nth-child(odd) .container-img {
+		top: 15%;
+	}
+	.container-img {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 45%;
+		margin: auto;
+		@include tablet{
+			width: 27%;
+		}
+		h3 {
+			position: absolute;
+			top: -8%;
+			right: -40%;
+			white-space: nowrap;
+			text-align: right;
+			z-index: 100;
+			color: white;
+		}
+		.arrowExpo {
+			position: absolute;
+			left: -10vw;
+			top: 30%;
+			width: 27%;
+		}
+		.image {
+			overflow: hidden;
+			height: 100%;
+			&:hover img {
+				transform: scale(1.2);
+			}
+			img {
+				transition: transform 0.7s;
+			}
+		}
+		.date {
+			color: white;
+			margin-top: 15px;
+		}
+	}
+	.bg-title {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		color: rgba(121, 121, 121, 0.158);
+		font-size: 25em;
+		z-index: -1;
+		pointer-events: none;
+	}
+	h2 {
+		margin: auto;
+		width: 50vw;
+		color: white;
+		@extend %centerFlex;
+		.span-exposition {
+			i {
+				margin-left: 30px;
+			}
+		}
+	}
+}
+
+/*Ticket*/
+.ticket {
+	height: auto;
+	.row,
+		.ticket-left {
+			height: 100%;
+			@include tablet{
+				height: auto;
+			}
+			.square{
+				@extend %centerFlex;
+				height: 30%;
+				.txt{
+					padding: 20% 0;
+					@include phone{
+						padding: 10% 0;
+					}
+				}
+			}
+			#black {
+				background-color: #525252;
+					h3 {
+						color: white;
+						text-align: center;
+					}
+			}
+			.flex-bloc {
+				height: 70%;
+				#blue {
+					height: 50%;
+					background-color: #93A6E3;
+					h4,
+					p {
+						color: white;
+					}
+				}
+				#yellow {
+					background-color: #FFD300;
+					height: 50%;
+				}
+				#gray {
+					height: 30%;
+					background-color: #e2e2e2;
+					@include tablet{
+					height: 100%;
+					}
+				}
+			}
+		.ticket-right {
+			@extend %centerFlex;
+			background-color: #93A6E3;
+			position: relative;
+			height: 100vh;
+			form {
+				width: 90%;
+				margin: auto;
+				padding: 35px 0;
+				visibility: hidden;
+				opacity: 0;
+				transition: opacity 0.7s;
+				@include tablet{
+					width: 65%;
+				}
+				label {
+					margin: 40px 0 10px 0;
+					color: white;
+				}
+				input {
+					width: 100%;
+					outline: none;
+					display: block;
+					border: none;
+					border-bottom: 0.5px solid white;
+					background-color: transparent;
+				}
+				.erreur {
+					margin-top: 15px;
+					color: #FFD300;
+				}
+				.container-btn {
+					padding: 0;
+					margin-top: 10%;
+					.reset {
+						border: 1px solid white;
+						color: white;
+						border-radius: 20px;
+						padding: 2px 13px;
+						&:hover {
+							background-color: white;
+							color: black;
+						}
+					}
+					.go {
+						margin-left: 20px;
+						background-color: white;
+						color: black;
+						border: 1px solid white;
+						border-radius: 20px;
+						padding: 2px 13px;
+						&:hover {
+							background-color: transparent;
+							color: white
+						}
+					}
+				}
+			}
+			.cta {
+				@include centerObs(50%, 50%, -50%, -50%);
+				border-radius: 20px;
+				padding: 3px 10px;
+				background-color: transparent;
+				color: white;
+				border: 1px solid white;
+				font-size: 20px;
+				&:hover{
+					background-color: #525252;
+					color: white;
+					border: 1px solid #525252;
+				}
+			}
+		}
+	}
+}

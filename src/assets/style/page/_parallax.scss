@@ -1,0 +1,76 @@
+.parallax{
+    position: relative;
+    overflow: hidden;
+        .enterMuseum{
+            @include centerObs(50%, 50%, -50%,-50%); 
+            text-align: center;
+            white-space: nowrap;
+            .link-enter{
+                @extend %btn;
+            }
+            @include phone{
+                width: 35%;
+            }
+            @include tablet{
+                width: 25%;
+        }
+    }
+    .image-parallax{
+        position: absolute;
+        transition: 0.2s;
+            width: 30%;
+            &:nth-child(1){
+                position: initial;
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 20px;
+            }
+            &:nth-child(2){
+                top: 70%; 
+                left: 5%;
+            }
+            &:nth-child(3){
+                top: 5%; 
+                left: 60%;
+            }
+            &:nth-child(4){
+                right: 20%;
+                bottom: 10%;
+            }
+            &:nth-child(5){
+                width: 17%;
+                top: 15%;
+                left: 10%;
+            }
+            &:nth-child(6){
+                right: 10%;
+                top: 25%;
+                width: 17%;
+            }
+        @include phone{
+            width: 20%;
+            &:nth-child(2){
+                top: 50%;
+            }
+            &:nth-child(5){
+                left: 20%;
+            }
+        }
+        @include tablet{
+            &:nth-child(3){
+                top: 0;
+            }
+            &:nth-child(4){
+                right: 10%;
+                bottom: 5%;
+            }
+            &:nth-child(5){
+                width: 10%;
+            }
+            &:nth-child(6){
+                width: 10%;
+                top: 30%;
+            }
+        }
+    }
+}

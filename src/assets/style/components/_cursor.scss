@@ -1,0 +1,14 @@
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: white;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    @include hoverDevice{
+        display: none;
+    }
+}
