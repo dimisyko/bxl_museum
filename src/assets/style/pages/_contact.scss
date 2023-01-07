@@ -1,12 +1,12 @@
 .contact {
-	@include laptop{
+	@include tablet{
 		height: 100vh;
 	}
 	.image-bg {
 		padding: 122px 0 0 0;
 		height: 60vh;
 		@include tablet {
-			height: auto;
+			height: 100%;
 			padding: 9% 0 0 0;
 		}
 		img {
@@ -28,6 +28,9 @@
 				padding: 50px 0;
 				border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
 				border-right: 0.5px solid rgba(0, 0, 0, 0.2);
+				@include tablet{
+					padding: 0;
+				}
 				&:last-child {
 					border-bottom: none;
 				}
