@@ -8,7 +8,7 @@ export default class transition {
         this.tlInter()
 }
 
-    tlLeave() {
+    tlLeave(url) {
         this.svg.style.zIndex = 999
         const tlLeave = gsap.timeline()
         tlLeave.set(this.path, {
@@ -23,6 +23,9 @@ export default class transition {
             attr : {'d' : "M 0 100 Q 50 100 100 100 V 0 Q 50 0 0 0 Z"},
             duration: 0.4,
             ease: 'power2',
+            onComplete : function(){
+                window.location.href = url
+            }
         })
     }
 
@@ -52,11 +55,8 @@ export default class transition {
         this.links.forEach((link) => {
             link.addEventListener('click', (e) => {
                 e.preventDefault()
-                const attr = link.getAttribute('href')
-                this.tlLeave()
-                setTimeout(() => {
-                    window.location.href = attr
-                }, 1200);
+                const url = link.getAttribute('href')
+                this.tlLeave(url)
             })
         })
     }
