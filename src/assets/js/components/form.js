@@ -45,6 +45,7 @@ export default class form{
             }
         })
          xml.open('POST', 'message_ajax.php', true)
+         xml.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
          xml.send(data)
     }
     clkBtn(){
