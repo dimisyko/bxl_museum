@@ -37,7 +37,7 @@
 				a {
 					text-transform: uppercase;
 					font-family: 'Circular Std';
-					color: #93a6e3;
+					color: $blue;
 					text-decoration: underline;
                     font-size: 1.2rem;
                     @include phone{

@@ -12,7 +12,8 @@ class app {
             link : document.querySelectorAll('.link'),
             btnUp : document.querySelector('.arrowUp'),
             afterExpo : document.querySelector('.intro'),
-            istImg : document.querySelector('.list-img-anim')
+            istImg : document.querySelector('.list-img-anim'),
+            btnMenu : document.querySelector('.menu-btn')
         }
         new parallax()
         new transition()
@@ -20,6 +21,9 @@ class app {
         new form()
         this.event()
         tlGsap()
+    }
+    toggleMenu(){
+        document.body.classList.toggle('open')
     }
     currentLink(){
         for (let index = 0; index < this.el.link.length; index++) {
@@ -53,6 +57,7 @@ class app {
         if(this.el.btnUp){
             this.el.btnUp.addEventListener('click', this.scrollTop.bind(this))
         }
+        this.el.btnMenu.addEventListener('click', this.toggleMenu.bind(this))
         window.addEventListener('scroll', this.animImg.bind(this))
     }
 }

@@ -1,5 +1,5 @@
-@mixin centerObs($top, $left, $x, $y) {
-	position: absolute;
+@mixin centerObs($position, $top, $left, $x, $y) {
+	position: $position;
 	top: $top;
 	left: $left;
 	transform: translate($x, $y);
@@ -54,6 +54,7 @@
 	}
 	&.active {
 		color: rgb(233, 0, 0);
+		pointer-events: none;
 	}
 }
 

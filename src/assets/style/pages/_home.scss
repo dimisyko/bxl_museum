@@ -30,13 +30,13 @@
 			}
 		}
 		.container-center {
-			@include centerObs(50%, 50%, -50%, -50%);
+			@include centerObs(absolute, 50%, 50%, -50%, -50%);
 			width: 100%;
 			height: 40vw;
 		}
 		.txt {
 			width: 45%;
-			color: #525252;
+			color: $gray;
 			margin: auto;
 			height: 100%;
 			span {
@@ -73,7 +73,7 @@
 		@include After(0, 0);
 		height: 100%;
 		width: 40%;
-		background-color: #FFD300;
+		background-color: $yellow
 	}
 	.txt {
 		padding: 20% 0;
@@ -99,7 +99,7 @@
 			width: 100%;
 			margin: 7% auto 0;	
 			@include tablet{
-				width: 60%;
+				width: 70%;
 			}
 		}
 	}
@@ -144,7 +144,7 @@
 		@include After(0, 0);
 		height: 70%;
 		width: 100%;
-		background-color: #93A6E3;
+		background-color: $blue;
 		@include tablet{
 			height: 80%;
 		}
@@ -189,7 +189,7 @@
 /*currentExposition*/ /*currentExposition*/ /*currentExposition*/
 .bg-gray,
 .bg-transi {
-	background-color: #525252;
+	background-color: $gray;
 	transition: background-color 0.5s;
 }
 .container-expo {
@@ -202,7 +202,7 @@
 			@include After(60%, 0);
 			height: 40vh;
 			width: 30%;
-			background-color: #FFD300;
+			background-color: $yellow;
 		}
 	}
 	&:nth-child(even) .container-img {
@@ -295,7 +295,7 @@
 				}
 			}
 			#black {
-				background-color: #525252;
+				background-color: $gray;
 					h3 {
 						color: white;
 						text-align: center;
@@ -305,14 +305,14 @@
 				height: 70%;
 				#blue {
 					height: 50%;
-					background-color: #93A6E3;
+					background-color: $blue;
 					h4,
 					p {
 						color: white;
 					}
 				}
 				#yellow {
-					background-color: #FFD300;
+					background-color: $yellow;
 					height: 50%;
 				}
 				#gray {
@@ -325,7 +325,7 @@
 			}
 		.ticket-right {
 			@extend %centerFlex;
-			background-color: #93A6E3;
+			background-color: $blue;
 			position: relative;
 			height: 100vh;
 			form {
@@ -352,7 +352,7 @@
 				}
 				.erreur {
 					margin-top: 15px;
-					color: #FFD300;
+					color: $yellow
 				}
 				.container-btn {
 					padding: 0;
@@ -382,7 +382,7 @@
 				}
 			}
 			.cta {
-				@include centerObs(50%, 50%, -50%, -50%);
+				@include centerObs(absolute, 50%, 50%, -50%, -50%);
 				border-radius: 20px;
 				padding: 3px 10px;
 				background-color: transparent;
@@ -390,9 +390,9 @@
 				border: 1px solid white;
 				font-size: 20px;
 				&:hover{
-					background-color: #525252;
+					background-color: $gray;
 					color: white;
-					border: 1px solid #525252;
+					border: 1px solid $gray;
 				}
 			}
 		}

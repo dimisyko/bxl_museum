@@ -2,7 +2,7 @@
     position: relative;
     overflow: hidden;
         .enterMuseum{
-            @include centerObs(50%, 50%, -50%,-50%); 
+            @include centerObs(absolute, 50%, 50%, -50%,-50%); 
             text-align: center;
             white-space: nowrap;
             .link-enter{
