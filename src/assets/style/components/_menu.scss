@@ -1,3 +1,5 @@
+@use "../partials/var" as *;
+@use "../partials/mixin-extend" as *;
 .menu {
 	position: fixed;
 	top: 0;

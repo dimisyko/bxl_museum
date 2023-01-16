@@ -1,3 +1,5 @@
+@use "../partials/var" as *;
+@use "../partials/mixin-extend" as *;
 .contact {
 	@include tablet{
 		height: 100vh;

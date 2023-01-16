@@ -1,14 +1,12 @@
-@import './partials/var';
-@import './partials/mixin-extend';
-@import './partials/global';
-@import './partials/sizeFont';
-@import './partials/fonts';
+@forward './partials/global';
+@forward './partials/sizeFont';
+@forward './partials/fonts';
 
-@import './components/menu';
-@import './components/footer';
-@import './components/cursor';
+@forward './components/menu';
+@forward './components/footer';
+@forward './components/cursor';
 
-@import './pages/parallax';
-@import './pages/home';
-@import './pages/single';
-@import './pages/contact';
+@forward './pages/parallax';
+@forward './pages/home';
+@forward './pages/single';
+@forward './pages/contact';
