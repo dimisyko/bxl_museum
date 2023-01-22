@@ -1,21 +1,24 @@
 export default class cursor{
     constructor(){
         this.curseur = document.querySelector('.cursor')
-        this.initPos = { x : 0, y : 0},
-        this.newPos = { x : 0, y : 0}
+        this.pos ={
+        posX : { init : 0, posMouse : 0, ease : 10},
+        posY : { init : 0, posMouse : 0, ease : 10}
+        }
         this.event()
     }
     ease(start, end, ease){
         return start += (end - start) / ease
     }
     posCursor(e){
-        this.initPos.x = e.pageX
-        this.initPos.y = e.pageY - window.pageYOffset
+        this.pos.posX.posMouse = e.pageX
+        this.pos.posY.posMouse = e.pageY - window.pageYOffset
     }
     raf(){
-        this.newPos.x = this.ease(this.newPos.x, this.initPos.x, 10)
-        this.newPos.y = this.ease(this.newPos.y, this.initPos.y, 10)
-        this.curseur.style.transform = "translate3d("+this.newPos.x+"px,"+this.newPos.y+"px, 0) translate(-50%, -50%)"
+        for (const key in this.pos) {
+            this.pos[key].init = this.ease(this.pos[key].init, this.pos[key].posMouse, this.pos[key].ease)
+        }
+        this.curseur.style.transform = "translate3d("+this.pos.posX.init+"px,"+this.pos.posY.init+"px, 0) translate(-50%, -50%)"
         this.run = requestAnimationFrame(this.raf.bind(this))
     }
     destroyed(){
